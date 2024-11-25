@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PrevisaoTempoSQLite.Views.HistoryPage"
-             Title="HistoryPage">
+             x:Class="PrevisaoTempoSQLite.Views.HistoryPage">
+    
     <ScrollView>
         <StackLayout HorizontalOptions="Center" Padding="20" Spacing="20">
-            <Label Text="Histórico de Previsões" HorizontalTextAlignment="Center"/>
+            
+            <Label Text="Histórico de Previsões" FontSize="Medium" HorizontalTextAlignment="Center"/>
+            
             <FlexLayout HorizontalOptions="Center">
-                <SearchBar Placeholder="Pesquise uma previsão pela cidade..." WidthRequest="500" TextChanged="SearchBar_TextChanged" />
+                <SearchBar Placeholder="Pesquise uma previsão pela cidade" WidthRequest="500" TextChanged="SearchBar_TextChanged" />
             </FlexLayout>
+            
             <VerticalStackLayout>
                 <ListView x:Name="lst_weather">
                     <ListView.Header>
@@ -21,6 +24,7 @@
                             <Label Grid.Column="5" Text="Temperatura"/>
                         </Grid>
                     </ListView.Header>
+                    
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -38,11 +42,14 @@
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
+                    
                 </ListView>
             </VerticalStackLayout>
+            
             <FlexLayout HorizontalOptions="Center">
-                <Button Text="Apagar tudo" TextColor="White" BackgroundColor="#4c5b6c" FontAttributes="Bold" WidthRequest="200" Clicked="Button_Clicked"/>
+                <Button Text="Apagar tudo" TextColor="White" BackgroundColor="#326273" WidthRequest="200" Clicked="Button_Clicked"/>
             </FlexLayout>
+            
         </StackLayout>
     </ScrollView>
 </ContentPage>
